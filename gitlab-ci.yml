@@ -15,7 +15,8 @@ frontend-build:
   before_script:
     - echo "Building frontend..."
   script:
-    - echo "Run build"
+    - docker build -f ./frontend/Dockerfile -t heronsousa/workshop-ci-entrega-02_frontend:build ./frontend
+    - docker push heronsousa/workshop-ci-entrega-02_frontend:build
   after_script:
     - echo "Successfully built frontend"
 
