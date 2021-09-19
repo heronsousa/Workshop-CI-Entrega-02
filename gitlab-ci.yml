@@ -31,11 +31,12 @@ backend-build:
     - echo "Successfully built backend"
 
 frontend-test:
+  image: docker/compose:latest
   stage: test
   before_script:
     - echo "Testing frontend..."
   script:
-    - echo "Run test"
+    - docker-compose run --entrypoint "npm run test" frontend
   after_script:
     - echo "Successfully tested frontend"
 
