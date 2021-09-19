@@ -7,6 +7,9 @@ image: docker:latest
 services:
   - docker:dind
 
+before_script:
+  - docker login -u heronsousa
+
 frontend-build:
   stage: build
   before_script:
