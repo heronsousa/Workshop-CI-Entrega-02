@@ -25,7 +25,8 @@ backend-build:
   before_script:
     - echo "Building backend..."
   script:
-    - echo "Run build"
+    - docker build -f ./backend/Dockerfile -t heronsousa/workshop-ci-entrega-02_backend:build ./backend
+    - docker push heronsousa/workshop-ci-entrega-02_backend:build
   after_script:
     - echo "Successfully built backend"
 
