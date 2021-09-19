@@ -41,10 +41,11 @@ frontend-test:
     - echo "Successfully tested frontend"
 
 backend-test:
+  image: docker/compose
   stage: test
   before_script:
     - echo "Testing backend..."
   script:
-    - echo "Run test"
+    - docker-compose run --entrypoint "npm run unittest" backend
   after_script:
     - echo "Successfully tested backend"
